@@ -1,0 +1,19 @@
+############
+# Baseline #
+############
+
+Word2Vec: https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit
+
+GloVe (Common Crawl 840B): http://nlp.stanford.edu/data/glove.840B.300d.zip
+
+GloVe (Twitter 2B): http://nlp.stanford.edu/data/glove.twitter.27B.zip
+
+#########################
+# New Embeddings (2019) #
+#########################
+
+
+Word-node2Vec (2019; Procheta Sen, Debasis Ganguly, Gareth Jones)
+https://github.com/procheta/Word-Node2Vec
+
+
