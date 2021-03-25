@@ -3,57 +3,62 @@
 ```
 sudo apt install unzip
 ```
-- To download Google Drive Files (such as the original Google News Vectors for the Caliskan Paper), use the command `gdown`
-(https://github.com/wkentaro/gdown)
-```
-pip install gdown
-```
+- Mac and Linux can use the command `gzip` to unzip `.gz` files
+
+- All pre-trained embeddings have been uploaded to a Google Cloud Bucket. The links to download .zip files are of the form:
+
+```https://storage.googleapis.com/word-embedding-bias/FILEPATH```
    
   
 # Baseline
 
 
 ### Word2Vec: 
-The main link `https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit` is not downloadable in the command line.
+The original link `https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit` is not downloadable in the command line.
 ```
-gdown https://drive.google.com/u/0/uc?id=0B7XkCwpI5KDYNlNUTTlSS21pQmM&export=download
-```
-This stops downloading after about 10 seconds
-```
-$ gdown https://drive.google.com/u/0/uc?id=0B7XkCwpI5KDYNlNUTTlSS21pQmM&export=download
-[1] 4199
-$ Downloading...
-From: https://drive.google.com/u/0/uc?id=0B7XkCwpI5KDYNlNUTTlSS21pQmM
-To: /home/jearcher/jearcher/bias-in-word-embeddings/data/embeddings/GoogleNews-vectors-negative300.bin.gz
-1.65GB [00:10, 162MB/s] 
+mkdir Word2Vec
 
+curl -o GoogleNews-vectors-negative300.bin.gz https://storage.googleapis.com/word-embedding-bias/Word2Vec/GoogleNews-vectors-negative300.bin.gz
+
+gzip -d GoogleNews-vectors-negative300.bin.gz
+
+cd .. 
 ```
 
-### Glove (Wikipedia 2014 + Gigaword 5) 322MB
+
+### GloVe 
+
+##### Wikipedia 2014 + Gigaword 5 (322MB). Original link: http://nlp.stanford.edu/data/glove.6B.zip
+
 ```
-curl -O http://nlp.stanford.edu/data/glove.6B.zip
+mkdir GloVe/
+cd GloVe/
+mkdir GloVe_6B/
+cd GloVe_6B/
+curl -O https://storage.googleapis.com/word-embedding-bias/GloVe/glove.6B.zip
 unzip glove.6B.zip
-mkdir glove.6B
-mv glove.6B*.txt glove.6B
+rm glove.6B.zip 
+cd ../
 ```
 
-GloVe (Common Crawl 840B): http://nlp.stanford.edu/data/glove.840B.300d.zip
+##### Common Crawl 840B. Original link: http://nlp.stanford.edu/data/glove.840B.300d.zip
 
-### GloVe (Twitter 2B): http://nlp.stanford.edu/data/glove.twitter.27B.zip
 ```
-curl -O http://nlp.stanford.edu/data/glove.twitter.27B.zip
-unzip glove.twitter.27B.zip
+curl -O https://storage.googleapis.com/word-embedding-bias/GloVe/glove.840B.300d.zip
+unzip glove.840B.300d.zip 
+rm glove.840B.300d.zip
 ```
 
-Returns an error: 
+##### Twitter 27B. Original link: http://nlp.stanford.edu/data/glove.twitter.27B.zip
+
 ```
-End-of-central-directory signature not found.  Either this file is not
-  a zipfile, or it constitutes one disk of a multi-part archive.  In the
-  latter case the central directory and zipfile comment will be found on
-  the last disk(s) of this archive.
-unzip:  cannot find zipfile directory in one of glove.twitter.27B.zip or
-        glove.twitter.27B.zip.zip, and cannot find glove.twitter.27B.zip.ZIP, period.
+mkdir GloVe_twitter_27B/ && cd GloVe_twitter_27B/
+curl -O https://storage.googleapis.com/word-embedding-bias/GloVe/glove.twitter.27B.zip
+unzip glove.twitter.27B.zip && rm glove.twitter.27B.zip
+cd ../
 ```
+
+
 
 # New Embeddings (2019) 
 
