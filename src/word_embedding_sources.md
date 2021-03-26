@@ -1,4 +1,5 @@
 - Source directory is `bias-in-word-embeddings/data/embeddings/`
+
 - Use `unzip` or your favorite command to unzip the downloaded files
 ```
 sudo apt install unzip
@@ -61,8 +62,13 @@ cd ../
 
 # New Embeddings (2019) 
 
+(make sure you are in `bias-in-word-embeddings/data/embeddings`)
+```
+mkdir Word-Node2Vec && cd Word-Node2Vec
+curl -O https://storage.googleapis.com/word-embedding-bias/Word-Node2Vec_2019/dbpedia.cwvec12.200.bin
+cd ..
 
-
+```
 Word-node2Vec (2019; Procheta Sen, Debasis Ganguly, Gareth Jones)
 https://github.com/procheta/Word-Node2Vec
 
