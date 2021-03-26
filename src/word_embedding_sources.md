@@ -36,8 +36,7 @@ cd GloVe/
 mkdir GloVe_6B/
 cd GloVe_6B/
 curl -O https://storage.googleapis.com/word-embedding-bias/GloVe/glove.6B.zip
-unzip glove.6B.zip
-rm glove.6B.zip 
+unzip glove.6B.zip && rm glove.6B.zip 
 cd ../
 ```
 
