@@ -3,3 +3,6 @@
 
 # Data directory (includes large corpus)
 data/
+
+# cache
+__pycache__/
