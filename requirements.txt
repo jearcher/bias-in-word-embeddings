@@ -7,8 +7,8 @@ json>=2.0.9
 scipy>=1.4.1
 
 # Progress bar in jupyter nb
-tqdm >= 4.47.0
-ipywidgets
+#tqdm >= 4.47.0
+#ipywidgets
 # May have to run this line:
 # jupyter nbextension enable --py widgetsnbextension
 # docs: https://ipywidgets.readthedocs.io/en/latest/user_install.html
