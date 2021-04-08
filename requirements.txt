@@ -5,6 +5,7 @@ gensim>=4.0.0
 numpy>=1.18.5
 json>=2.0.9
 scipy>=1.4.1
+vecto >= 0.2.12
 
 # Progress bar in jupyter nb
 #tqdm >= 4.47.0
