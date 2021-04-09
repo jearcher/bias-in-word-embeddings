@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*--
 """
 This is code to load all of the word lists for our paper.
 """
@@ -7,7 +7,7 @@ if not 'sys_lists' in dir():
     sys_lists = dir()
 sys_lists += 'sys_lists'
 
-wikiWordsPath = './' + 'enwiki-20190320-words-frequency.txt'
+wikiWordsPath = '/content/bias-in-word-embeddings/' + 'enwiki-20190320-words-frequency.txt'
 wikiWords = []
 with open(wikiWordsPath, "r+") as f_in:
     for line in f_in:
@@ -15,7 +15,7 @@ with open(wikiWordsPath, "r+") as f_in:
       if int(one_line[1]) > 200:
         wikiWords.append(one_line[0]) 
         
-wikiWordsPath = './' + '/SIF/auxiliary_data/enwiki_vocab_min200.txt'
+wikiWordsPath = '/content/bias-in-word-embeddings' + '/SIF/auxiliary_data/enwiki_vocab_min200.txt'
 with open(wikiWordsPath, "r+") as f_in:
     for line in f_in:
         wikiWords.append(line.split(' ')[0])
@@ -23,7 +23,7 @@ with open(wikiWordsPath, "r+") as f_in:
 from ConceptorDebias.lists.Greenwald_1998_Perez_2010_lists import *
 from ConceptorDebias.lists.WEAT_lists import *
 
-winoWordsPath = './' + 'corefBias/WinoBias/wino/extra_gendered_words.txt'
+winoWordsPath = '/content/bias-in-word-embeddings/' + 'corefBias/WinoBias/wino/extra_gendered_words.txt'
 male_vino_extra = []
 female_vino_extra = []
 with open(winoWordsPath, "r+") as f_in:
@@ -31,25 +31,25 @@ with open(winoWordsPath, "r+") as f_in:
         male_vino_extra.append(line.split('\t')[0])
         female_vino_extra.append(line.strip().split('\t')[1])
 
-gnGloveFemaleWordPath = './' + 'gn_glove/wordlist/female_word_file.txt'
+gnGloveFemaleWordPath = '/content/bias-in-word-embeddings/' + 'gn_glove/wordlist/female_word_file.txt'
 female_gnGlove = []
 with open(gnGloveFemaleWordPath, "r+") as f_in:
     for line in f_in:
         female_gnGlove.append(line.strip())
-gnGloveMaleWordPath = './' + 'gn_glove/wordlist/male_word_file.txt'
+gnGloveMaleWordPath = '/content/bias-in-word-embeddings/' + 'gn_glove/wordlist/male_word_file.txt'
 male_gnGlove = []
 with open(gnGloveMaleWordPath, "r+") as f_in:
     for line in f_in:
         male_gnGlove.append(line.strip())
 
-cmuMaleWordPath = './' + 'male.txt'
+cmuMaleWordPath = '/content/bias-in-word-embeddings/' + 'male.txt'
 male_cmu = []
 with open(cmuMaleWordPath, "r+") as f_in:
   for line in f_in:
     w = line.strip()
     if len(w)>0 and w[0] != '#':
       male_cmu.append(w)
-cmuFemaleWordPath = './' + 'female.txt'
+cmuFemaleWordPath = '/content/bias-in-word-embeddings/' + 'female.txt'
 female_cmu = []
 with open(cmuFemaleWordPath, "r+") as f_in:
   for line in f_in:
